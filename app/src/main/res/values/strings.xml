@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Food Delivery</string>
+    <string name="text_loading">Please Wait</string>
 </resources>
