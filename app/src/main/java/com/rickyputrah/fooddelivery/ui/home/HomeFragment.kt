@@ -2,7 +2,6 @@ package com.rickyputrah.fooddelivery.ui.home
 
 import android.graphics.Color
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
@@ -12,7 +11,6 @@ import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.tabs.TabLayout
 import com.rickyputrah.fooddelivery.R
 import com.rickyputrah.fooddelivery.databinding.HomeFragmentBinding
-import com.rickyputrah.fooddelivery.databinding.LayoutTabBarBinding
 import com.rickyputrah.fooddelivery.ui.home.widget.food.FoodListWidget
 import com.rickyputrah.fooddelivery.ui.home.widget.food.FoodListWidgetSpec
 import com.rickyputrah.fooddelivery.util.getPixelValue
@@ -58,7 +56,7 @@ class HomeFragment : Fragment(R.layout.home_fragment), MavericksView {
         }
         pagerAdapter.notifyDataSetChanged()
         foodSpecs.forEachIndexed { position, spec ->
-            createTabBarItem(spec.category, position)
+            binding.tabBar.setTabText(spec.category, position)
         }
     }
 
@@ -67,13 +65,13 @@ class HomeFragment : Fragment(R.layout.home_fragment), MavericksView {
         binding.viewPagerContent.adapter = pagerAdapter
         binding.tabBar.setupWithViewPager(binding.viewPagerContent, true)
         binding.tabBar.tabMode = TabLayout.MODE_SCROLLABLE
-    }
-
-    private fun createTabBarItem(title: String, position: Int) {
-        val view = LayoutTabBarBinding.inflate(LayoutInflater.from(context)).apply {
-            textLabel.text = title
-        }
-        binding.tabBar.getTabAt(position)?.customView = view.root
+        binding.tabBar.tabRippleColor = null
+        binding.tabBar.setTabTextColors(
+            ContextCompat.getColor(
+                requireContext(),
+                R.color.dark_secondary
+            ), ContextCompat.getColor(requireContext(), R.color.dark_stain)
+        )
     }
 
     private fun setupAppBar() {
