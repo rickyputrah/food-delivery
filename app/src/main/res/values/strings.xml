@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">Food Delivery</string>
     <string name="text_loading">Please Wait</string>
+    <string name="text_cart_back_to_menu">Menu</string>
+    <string name="ongoing_development">Ongoing Development</string>
+    <string name="text_cart_title_page">Cart</string>
+    <string name="text_order_title_page">Order</string>
+    <string name="text_information_title_page">Information</string>
+    <string name="text_delivery_fee">Delivery Fee is Free</string>
+    <string name="text_price_label">Price:</string>
+    <string name="text_cart_empty">No Item in your Cart</string>
+    <string name="text_search_another_food">Search Another Food</string>
 </resources>

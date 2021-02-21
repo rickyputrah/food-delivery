@@ -43,9 +43,7 @@ class HomeViewModel @AssistedInject constructor(
                 val result = foodRepository.getFoodList()
                 val resultBanner = bannerRepository.getBanner()
                 val resultCart = cartRepository.getCartList()
-
                 val numberCart = (resultCart as? ResultRepository.Success)?.data?.size ?: 0
-
                 if (result is ResultRepository.Success && resultBanner is ResultRepository.Success) {
                     setState {
                         this.copy(
@@ -71,6 +69,28 @@ class HomeViewModel @AssistedInject constructor(
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
                 cartRepository.insertCartData(food)
+                checkCartSize()
+            }
+        }
+    }
+
+    fun checkCartSize() {
+        viewModelScope.launch {
+            withContext(Dispatchers.IO) {
+                val resultCart = cartRepository.getCartList()
+                val numberCart = (resultCart as? ResultRepository.Success)?.data?.size ?: 0
+                setState {
+                    val existingState = this.data.invoke()
+                    this.copy(
+                        data = Success(
+                            HomeResult(
+                                existingState?.foodList ?: listOf(),
+                                existingState?.banners ?: listOf(),
+                                numberCart
+                            )
+                        )
+                    )
+                }
             }
         }
     }

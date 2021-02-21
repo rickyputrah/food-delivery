@@ -15,6 +15,59 @@ class FakeFoodRepository : IFoodRepository {
                 MenuListResponse(
                     listOf(
                         MenuListResponse.MenuCollectionResponse(
+                            collectionName = "Sushi",
+                            menus = listOf(
+                                MenuListResponse.Menu(
+                                    id = 8,
+                                    name = "Lorem Ipsum",
+                                    price = 10,
+                                    portion = "Lorem ipsum dolor sit amet",
+                                    imageUrl = "https://b.zmtcdn.com/data/pictures/chains/5/18530405/60f96a36e1f86f5098316f48d24f3ba1.jpg?output-format=webp",
+                                    description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                                ),
+                                MenuListResponse.Menu(
+                                    id = 9,
+                                    name = "Lorem Ipsum",
+                                    price = 12,
+                                    portion = "Lorem ipsum dolor sit amet",
+                                    imageUrl = "https://b.zmtcdn.com/data/pictures/6/18875696/c98a7d61c788e8b023f49b6753c10d20.jpg",
+                                    description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                                ),
+                                MenuListResponse.Menu(
+                                    id = 11,
+                                    name = "Lorem Ipsum",
+                                    price = 132,
+                                    portion = "Lorem ipsum dolor sit amet",
+                                    imageUrl = "https://b.zmtcdn.com/data/pictures/chains/5/18530405/60f96a36e1f86f5098316f48d24f3ba1.jpg?output-format=webp",
+                                    description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                                ),
+                                MenuListResponse.Menu(
+                                    id = 12,
+                                    name = "Lorem Ipsum",
+                                    price = 412,
+                                    portion = "Lorem ipsum dolor sit amet",
+                                    imageUrl = "https://b.zmtcdn.com/data/pictures/6/18875696/c98a7d61c788e8b023f49b6753c10d20.jpg",
+                                    description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                                ),
+                                MenuListResponse.Menu(
+                                    id = 14,
+                                    name = "Lorem Ipsum",
+                                    price = 10,
+                                    portion = "Lorem ipsum dolor sit amet",
+                                    imageUrl = "https://b.zmtcdn.com/data/pictures/6/18875696/c98a7d61c788e8b023f49b6753c10d20.jpg",
+                                    description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                                ),
+                                MenuListResponse.Menu(
+                                    id = 15,
+                                    name = "Lorem Ipsum",
+                                    price = 12,
+                                    portion = "Lorem ipsum dolor sit amet",
+                                    imageUrl = "https://b.zmtcdn.com/data/pictures/chains/5/18530405/60f96a36e1f86f5098316f48d24f3ba1.jpg?output-format=webp",
+                                    description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                                )
+                            )
+                        ),
+                        MenuListResponse.MenuCollectionResponse(
                             collectionName = "Pizza",
                             menus = listOf(
                                 MenuListResponse.Menu(
@@ -79,59 +132,6 @@ class FakeFoodRepository : IFoodRepository {
                                     price = 412,
                                     portion = "Lorem ipsum dolor sit amet",
                                     imageUrl = "https://b.zmtcdn.com/data/pictures/chains/2/18941862/35725cef00f2958d28fc2f6df305520e.jpg?output-format=webp",
-                                    description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                                )
-                            )
-                        ),
-                        MenuListResponse.MenuCollectionResponse(
-                            collectionName = "Sushi",
-                            menus = listOf(
-                                MenuListResponse.Menu(
-                                    id = 8,
-                                    name = "Lorem Ipsum",
-                                    price = 10,
-                                    portion = "Lorem ipsum dolor sit amet",
-                                    imageUrl = "https://b.zmtcdn.com/data/pictures/chains/5/18530405/60f96a36e1f86f5098316f48d24f3ba1.jpg?output-format=webp",
-                                    description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                                ),
-                                MenuListResponse.Menu(
-                                    id = 9,
-                                    name = "Lorem Ipsum",
-                                    price = 12,
-                                    portion = "Lorem ipsum dolor sit amet",
-                                    imageUrl = "https://b.zmtcdn.com/data/pictures/6/18875696/c98a7d61c788e8b023f49b6753c10d20.jpg",
-                                    description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                                ),
-                                MenuListResponse.Menu(
-                                    id = 11,
-                                    name = "Lorem Ipsum",
-                                    price = 132,
-                                    portion = "Lorem ipsum dolor sit amet",
-                                    imageUrl = "https://b.zmtcdn.com/data/pictures/chains/5/18530405/60f96a36e1f86f5098316f48d24f3ba1.jpg?output-format=webp",
-                                    description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                                ),
-                                MenuListResponse.Menu(
-                                    id = 12,
-                                    name = "Lorem Ipsum",
-                                    price = 412,
-                                    portion = "Lorem ipsum dolor sit amet",
-                                    imageUrl = "https://b.zmtcdn.com/data/pictures/6/18875696/c98a7d61c788e8b023f49b6753c10d20.jpg",
-                                    description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                                ),
-                                MenuListResponse.Menu(
-                                    id = 14,
-                                    name = "Lorem Ipsum",
-                                    price = 10,
-                                    portion = "Lorem ipsum dolor sit amet",
-                                    imageUrl = "https://b.zmtcdn.com/data/pictures/6/18875696/c98a7d61c788e8b023f49b6753c10d20.jpg",
-                                    description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                                ),
-                                MenuListResponse.Menu(
-                                    id = 15,
-                                    name = "Lorem Ipsum",
-                                    price = 12,
-                                    portion = "Lorem ipsum dolor sit amet",
-                                    imageUrl = "https://b.zmtcdn.com/data/pictures/chains/5/18530405/60f96a36e1f86f5098316f48d24f3ba1.jpg?output-format=webp",
                                     description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                                 )
                             )

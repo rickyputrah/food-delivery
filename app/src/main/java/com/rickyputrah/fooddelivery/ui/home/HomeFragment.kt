@@ -41,8 +41,13 @@ class HomeFragment : Fragment(R.layout.home_fragment), MavericksView, FoodItemLi
         setupListener()
     }
 
+    override fun onResume() {
+        super.onResume()
+        alreadyShow = false
+        viewModel.checkCartSize()
+    }
+
     override fun onButtonAddClicked(food: FoodListWidgetSpec.Food) {
-        setupBadgeView(++numberCart)
         viewModel.addToCart(food)
     }
 
@@ -66,6 +71,7 @@ class HomeFragment : Fragment(R.layout.home_fragment), MavericksView, FoodItemLi
         binding.imageGallery.setImageList(result.banners)
         binding.loading.showLoading(false)
         numberCart = result.number
+        setupBadgeView(numberCart)
     }
 
     private fun setupFoodListData(foodSpecs: List<FoodListWidgetSpec>) {
@@ -90,7 +96,7 @@ class HomeFragment : Fragment(R.layout.home_fragment), MavericksView, FoodItemLi
         binding.tabBar.setTabTextColors(
             ContextCompat.getColor(
                 requireContext(),
-                R.color.dark_secondary
+                R.color.light_secondary
             ), ContextCompat.getColor(requireContext(), R.color.dark_stain)
         )
     }
@@ -128,10 +134,10 @@ class HomeFragment : Fragment(R.layout.home_fragment), MavericksView, FoodItemLi
                     OnGlobalLayoutListener {
                     @SuppressLint("UnsafeExperimentalUsageError")
                     override fun onGlobalLayout() {
-                        badgeDrawable.number = numberCart
-                        badgeDrawable.isVisible = numberCart > 0
                         BadgeUtils.attachBadgeDrawable(badgeDrawable, binding.buttonCart, null)
                         binding.buttonCart.viewTreeObserver.removeOnGlobalLayoutListener(this)
+                        badgeDrawable.number = numberCart
+                        badgeDrawable.isVisible = numberCart > 0
                     }
                 })
             }
