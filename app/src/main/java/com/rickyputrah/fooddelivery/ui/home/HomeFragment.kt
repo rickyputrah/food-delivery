@@ -8,6 +8,7 @@ import android.view.ViewTreeObserver.OnGlobalLayoutListener
 import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.airbnb.mvrx.*
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.badge.BadgeDrawable
@@ -26,11 +27,12 @@ import kotlin.math.abs
 class HomeFragment : Fragment(R.layout.home_fragment), MavericksView, FoodItemListener {
 
     private val viewModel: HomeViewModel by fragmentViewModel()
-
     private val binding by viewBinding(HomeFragmentBinding::bind)
-    private lateinit var pagerAdapter: HomePagerAdapter
 
+    private var alreadyShow = false
     private var numberCart = 0
+
+    private lateinit var pagerAdapter: HomePagerAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -46,7 +48,7 @@ class HomeFragment : Fragment(R.layout.home_fragment), MavericksView, FoodItemLi
 
     private fun setupListener() {
         binding.buttonCart.setOnClickListener {
-
+            findNavController().navigate(R.id.action_home_fragment_to_cart_fragment)
         }
     }
 
@@ -64,7 +66,6 @@ class HomeFragment : Fragment(R.layout.home_fragment), MavericksView, FoodItemLi
         binding.imageGallery.setImageList(result.banners)
         binding.loading.showLoading(false)
         numberCart = result.number
-        setupBadgeView(numberCart)
     }
 
     private fun setupFoodListData(foodSpecs: List<FoodListWidgetSpec>) {
@@ -73,7 +74,6 @@ class HomeFragment : Fragment(R.layout.home_fragment), MavericksView, FoodItemLi
             productListWidget.setFoodListWidgetSpec(spec, this)
             pagerAdapter.addView(productListWidget)
             pagerAdapter.pageTitle.add(spec.category)
-
         }
         pagerAdapter.notifyDataSetChanged()
         foodSpecs.forEachIndexed { position, spec ->
@@ -122,7 +122,19 @@ class HomeFragment : Fragment(R.layout.home_fragment), MavericksView, FoodItemLi
     private fun setupButtonCartVisibility(range: Int) {
         if (range > -1000) {
             binding.buttonCart.visibility = View.VISIBLE
-            setupBadgeView(numberCart)
+            if (!alreadyShow) {
+                alreadyShow = true
+                binding.buttonCart.viewTreeObserver.addOnGlobalLayoutListener(object :
+                    OnGlobalLayoutListener {
+                    @SuppressLint("UnsafeExperimentalUsageError")
+                    override fun onGlobalLayout() {
+                        badgeDrawable.number = numberCart
+                        badgeDrawable.isVisible = numberCart > 0
+                        BadgeUtils.attachBadgeDrawable(badgeDrawable, binding.buttonCart, null)
+                        binding.buttonCart.viewTreeObserver.removeOnGlobalLayoutListener(this)
+                    }
+                })
+            }
         } else {
             binding.buttonCart.visibility = View.GONE
         }
@@ -138,15 +150,5 @@ class HomeFragment : Fragment(R.layout.home_fragment), MavericksView, FoodItemLi
     private fun setupBadgeView(number: Int) {
         badgeDrawable.number = number
         badgeDrawable.isVisible = number > 0
-        binding.buttonCart.viewTreeObserver.addOnGlobalLayoutListener(object :
-            OnGlobalLayoutListener {
-            @SuppressLint("UnsafeExperimentalUsageError")
-            override fun onGlobalLayout() {
-                badgeDrawable.number = number
-                badgeDrawable.isVisible = number > 0
-                BadgeUtils.attachBadgeDrawable(badgeDrawable, binding.buttonCart, null)
-                binding.buttonCart.viewTreeObserver.removeOnGlobalLayoutListener(this)
-            }
-        })
     }
 }

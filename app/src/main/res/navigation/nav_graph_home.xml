@@ -7,5 +7,17 @@
     <fragment
         android:id="@+id/home_fragment"
         android:name="com.rickyputrah.fooddelivery.ui.home.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment">
+        <action
+            android:id="@+id/action_home_fragment_to_cart_fragment"
+            app:destination="@id/cart_fragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/cart_fragment"
+        android:name="com.rickyputrah.fooddelivery.ui.cart.CartFragment"
+        android:label="CartFragment" />
 </navigation>

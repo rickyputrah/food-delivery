@@ -11,7 +11,6 @@ import com.rickyputrah.fooddelivery.ui.home.widget.food.FoodListWidgetSpec
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
-import io.reactivex.disposables.Disposable
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -31,13 +30,11 @@ class HomeViewModel @AssistedInject constructor(
     private val cartRepository: ICartRepository
 ) : MavericksViewModel<HomeState>(state) {
 
-    private var subscription: Disposable? = null
-
     init {
-        loadFoodList()
+        loadHomePageData()
     }
 
-    private fun loadFoodList() {
+    private fun loadHomePageData() {
         viewModelScope.launch {
             setState {
                 this.copy(data = Loading())
@@ -76,12 +73,6 @@ class HomeViewModel @AssistedInject constructor(
                 cartRepository.insertCartData(food)
             }
         }
-    }
-
-
-    override fun onCleared() {
-        super.onCleared()
-        subscription?.dispose()
     }
 
     @AssistedFactory
