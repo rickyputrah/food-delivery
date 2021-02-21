@@ -18,7 +18,7 @@ class FakeFoodRepository : IFoodRepository {
                             collectionName = "Pizza",
                             menus = listOf(
                                 MenuListResponse.Menu(
-                                    id = "123",
+                                    id = 452,
                                     name = "Lorem Ipsum",
                                     price = 10,
                                     portion = "Lorem ipsum dolor sit amet",
@@ -26,7 +26,7 @@ class FakeFoodRepository : IFoodRepository {
                                     description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                                 ),
                                 MenuListResponse.Menu(
-                                    id = "13131",
+                                    id = 645234,
                                     name = "Lorem Ipsum",
                                     price = 12,
                                     portion = "Lorem ipsum dolor sit amet",
@@ -34,7 +34,7 @@ class FakeFoodRepository : IFoodRepository {
                                     description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                                 ),
                                 MenuListResponse.Menu(
-                                    id = "3431",
+                                    id = 679,
                                     name = "Lorem Ipsum",
                                     price = 132,
                                     portion = "Lorem ipsum dolor sit amet",
@@ -42,7 +42,7 @@ class FakeFoodRepository : IFoodRepository {
                                     description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                                 ),
                                 MenuListResponse.Menu(
-                                    id = "5454",
+                                    id = 221,
                                     name = "Lorem Ipsum",
                                     price = 412,
                                     portion = "Lorem ipsum dolor sit amet",
@@ -50,7 +50,7 @@ class FakeFoodRepository : IFoodRepository {
                                     description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                                 ),
                                 MenuListResponse.Menu(
-                                    id = "1235454",
+                                    id = 53,
                                     name = "Lorem Ipsum",
                                     price = 10,
                                     portion = "Lorem ipsum dolor sit amet",
@@ -58,7 +58,7 @@ class FakeFoodRepository : IFoodRepository {
                                     description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                                 ),
                                 MenuListResponse.Menu(
-                                    id = "13131131",
+                                    id = 5,
                                     name = "Lorem Ipsum",
                                     price = 12,
                                     portion = "Lorem ipsum dolor sit amet",
@@ -66,7 +66,7 @@ class FakeFoodRepository : IFoodRepository {
                                     description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                                 ),
                                 MenuListResponse.Menu(
-                                    id = "1231436",
+                                    id = 6,
                                     name = "Lorem Ipsum",
                                     price = 132,
                                     portion = "Lorem ipsum dolor sit amet",
@@ -74,7 +74,7 @@ class FakeFoodRepository : IFoodRepository {
                                     description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                                 ),
                                 MenuListResponse.Menu(
-                                    id = "067345",
+                                    id = 7,
                                     name = "Lorem Ipsum",
                                     price = 412,
                                     portion = "Lorem ipsum dolor sit amet",
@@ -87,7 +87,7 @@ class FakeFoodRepository : IFoodRepository {
                             collectionName = "Sushi",
                             menus = listOf(
                                 MenuListResponse.Menu(
-                                    id = "123",
+                                    id = 8,
                                     name = "Lorem Ipsum",
                                     price = 10,
                                     portion = "Lorem ipsum dolor sit amet",
@@ -95,7 +95,7 @@ class FakeFoodRepository : IFoodRepository {
                                     description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                                 ),
                                 MenuListResponse.Menu(
-                                    id = "13131",
+                                    id = 9,
                                     name = "Lorem Ipsum",
                                     price = 12,
                                     portion = "Lorem ipsum dolor sit amet",
@@ -103,7 +103,7 @@ class FakeFoodRepository : IFoodRepository {
                                     description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                                 ),
                                 MenuListResponse.Menu(
-                                    id = "3431",
+                                    id = 11,
                                     name = "Lorem Ipsum",
                                     price = 132,
                                     portion = "Lorem ipsum dolor sit amet",
@@ -111,7 +111,7 @@ class FakeFoodRepository : IFoodRepository {
                                     description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                                 ),
                                 MenuListResponse.Menu(
-                                    id = "5454",
+                                    id = 12,
                                     name = "Lorem Ipsum",
                                     price = 412,
                                     portion = "Lorem ipsum dolor sit amet",
@@ -119,7 +119,7 @@ class FakeFoodRepository : IFoodRepository {
                                     description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                                 ),
                                 MenuListResponse.Menu(
-                                    id = "1235454",
+                                    id = 14,
                                     name = "Lorem Ipsum",
                                     price = 10,
                                     portion = "Lorem ipsum dolor sit amet",
@@ -127,7 +127,7 @@ class FakeFoodRepository : IFoodRepository {
                                     description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                                 ),
                                 MenuListResponse.Menu(
-                                    id = "13131131",
+                                    id = 15,
                                     name = "Lorem Ipsum",
                                     price = 12,
                                     portion = "Lorem ipsum dolor sit amet",
@@ -140,7 +140,7 @@ class FakeFoodRepository : IFoodRepository {
                             collectionName = "Ramen",
                             menus = listOf(
                                 MenuListResponse.Menu(
-                                    id = "123",
+                                    id = 16,
                                     name = "Lorem Ipsum",
                                     price = 10,
                                     portion = "Lorem ipsum dolor sit amet",
@@ -148,7 +148,7 @@ class FakeFoodRepository : IFoodRepository {
                                     description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                                 ),
                                 MenuListResponse.Menu(
-                                    id = "13131",
+                                    id = 21,
                                     name = "Lorem Ipsum",
                                     price = 12,
                                     portion = "Lorem ipsum dolor sit amet",
@@ -156,7 +156,7 @@ class FakeFoodRepository : IFoodRepository {
                                     description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                                 ),
                                 MenuListResponse.Menu(
-                                    id = "3431",
+                                    id = 22,
                                     name = "Lorem Ipsum",
                                     price = 132,
                                     portion = "Lorem ipsum dolor sit amet",
@@ -164,7 +164,7 @@ class FakeFoodRepository : IFoodRepository {
                                     description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                                 ),
                                 MenuListResponse.Menu(
-                                    id = "5454",
+                                    id = 23,
                                     name = "Lorem Ipsum",
                                     price = 412,
                                     portion = "Lorem ipsum dolor sit amet",
@@ -172,7 +172,7 @@ class FakeFoodRepository : IFoodRepository {
                                     description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                                 ),
                                 MenuListResponse.Menu(
-                                    id = "1235454",
+                                    id = 24,
                                     name = "Lorem Ipsum",
                                     price = 10,
                                     portion = "Lorem ipsum dolor sit amet",
@@ -180,7 +180,7 @@ class FakeFoodRepository : IFoodRepository {
                                     description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                                 ),
                                 MenuListResponse.Menu(
-                                    id = "13131131",
+                                    id = 25,
                                     name = "Lorem Ipsum",
                                     price = 12,
                                     portion = "Lorem ipsum dolor sit amet",
@@ -188,7 +188,7 @@ class FakeFoodRepository : IFoodRepository {
                                     description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                                 ),
                                 MenuListResponse.Menu(
-                                    id = "1231436",
+                                    id = 26,
                                     name = "Lorem Ipsum",
                                     price = 132,
                                     portion = "Lorem ipsum dolor sit amet",
@@ -196,7 +196,7 @@ class FakeFoodRepository : IFoodRepository {
                                     description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                                 ),
                                 MenuListResponse.Menu(
-                                    id = "067345",
+                                    id = 32,
                                     name = "Lorem Ipsum",
                                     price = 412,
                                     portion = "Lorem ipsum dolor sit amet",
@@ -209,7 +209,7 @@ class FakeFoodRepository : IFoodRepository {
                             collectionName = "Pasta",
                             menus = listOf(
                                 MenuListResponse.Menu(
-                                    id = "123",
+                                    id = 33,
                                     name = "Lorem Ipsum",
                                     price = 10,
                                     portion = "Lorem ipsum dolor sit amet",
@@ -217,7 +217,7 @@ class FakeFoodRepository : IFoodRepository {
                                     description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                                 ),
                                 MenuListResponse.Menu(
-                                    id = "13131",
+                                    id = 34,
                                     name = "Lorem Ipsum",
                                     price = 12,
                                     portion = "Lorem ipsum dolor sit amet",
@@ -225,7 +225,7 @@ class FakeFoodRepository : IFoodRepository {
                                     description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                                 ),
                                 MenuListResponse.Menu(
-                                    id = "3431",
+                                    id = 45,
                                     name = "Lorem Ipsum",
                                     price = 132,
                                     portion = "Lorem ipsum dolor sit amet",
@@ -233,7 +233,7 @@ class FakeFoodRepository : IFoodRepository {
                                     description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                                 ),
                                 MenuListResponse.Menu(
-                                    id = "5454",
+                                    id = 54,
                                     name = "Lorem Ipsum",
                                     price = 412,
                                     portion = "Lorem ipsum dolor sit amet",
@@ -241,7 +241,7 @@ class FakeFoodRepository : IFoodRepository {
                                     description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                                 ),
                                 MenuListResponse.Menu(
-                                    id = "1235454",
+                                    id = 55,
                                     name = "Lorem Ipsum",
                                     price = 10,
                                     portion = "Lorem ipsum dolor sit amet",
@@ -249,7 +249,7 @@ class FakeFoodRepository : IFoodRepository {
                                     description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                                 ),
                                 MenuListResponse.Menu(
-                                    id = "13131131",
+                                    id = 66,
                                     name = "Lorem Ipsum",
                                     price = 12,
                                     portion = "Lorem ipsum dolor sit amet",
@@ -257,7 +257,7 @@ class FakeFoodRepository : IFoodRepository {
                                     description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                                 ),
                                 MenuListResponse.Menu(
-                                    id = "1231436",
+                                    id = 77,
                                     name = "Lorem Ipsum",
                                     price = 132,
                                     portion = "Lorem ipsum dolor sit amet",
@@ -265,7 +265,7 @@ class FakeFoodRepository : IFoodRepository {
                                     description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                                 ),
                                 MenuListResponse.Menu(
-                                    id = "067345",
+                                    id = 88,
                                     name = "Lorem Ipsum",
                                     price = 412,
                                     portion = "Lorem ipsum dolor sit amet",

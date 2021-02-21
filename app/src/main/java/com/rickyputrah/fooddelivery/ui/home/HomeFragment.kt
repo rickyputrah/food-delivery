@@ -15,6 +15,7 @@ import com.google.android.material.badge.BadgeUtils
 import com.google.android.material.tabs.TabLayout
 import com.rickyputrah.fooddelivery.R
 import com.rickyputrah.fooddelivery.databinding.HomeFragmentBinding
+import com.rickyputrah.fooddelivery.ui.home.widget.food.FoodItemListener
 import com.rickyputrah.fooddelivery.ui.home.widget.food.FoodListWidget
 import com.rickyputrah.fooddelivery.ui.home.widget.food.FoodListWidgetSpec
 import com.rickyputrah.fooddelivery.util.getPixelValue
@@ -22,14 +23,14 @@ import com.rickyputrah.fooddelivery.util.viewBinding
 import kotlin.math.abs
 
 
-class HomeFragment : Fragment(R.layout.home_fragment), MavericksView {
+class HomeFragment : Fragment(R.layout.home_fragment), MavericksView, FoodItemListener {
 
     private val viewModel: HomeViewModel by fragmentViewModel()
 
     private val binding by viewBinding(HomeFragmentBinding::bind)
     private lateinit var pagerAdapter: HomePagerAdapter
 
-    var number = 2
+    private var numberCart = 0
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -38,11 +39,15 @@ class HomeFragment : Fragment(R.layout.home_fragment), MavericksView {
         setupListener()
     }
 
+    override fun onButtonAddClicked(food: FoodListWidgetSpec.Food) {
+        setupBadgeView(++numberCart)
+        viewModel.addToCart(food)
+    }
+
     private fun setupListener() {
         binding.buttonCart.setOnClickListener {
-            setupBadgeView(++number)
-        }
 
+        }
     }
 
 
@@ -58,12 +63,14 @@ class HomeFragment : Fragment(R.layout.home_fragment), MavericksView {
         setupFoodListData(result.foodList)
         binding.imageGallery.setImageList(result.banners)
         binding.loading.showLoading(false)
+        numberCart = result.number
+        setupBadgeView(numberCart)
     }
 
     private fun setupFoodListData(foodSpecs: List<FoodListWidgetSpec>) {
         foodSpecs.forEachIndexed { position, spec ->
             val productListWidget = FoodListWidget(requireContext())
-            productListWidget.setFoodListWidgetSpec(spec)
+            productListWidget.setFoodListWidgetSpec(spec, this)
             pagerAdapter.addView(productListWidget)
             pagerAdapter.pageTitle.add(spec.category)
 
@@ -115,7 +122,7 @@ class HomeFragment : Fragment(R.layout.home_fragment), MavericksView {
     private fun setupButtonCartVisibility(range: Int) {
         if (range > -1000) {
             binding.buttonCart.visibility = View.VISIBLE
-            setupBadgeView(number)
+            setupBadgeView(numberCart)
         } else {
             binding.buttonCart.visibility = View.GONE
         }

@@ -4,6 +4,11 @@ plugins {
     id 'kotlin-kapt'
 }
 
+//Database Properties
+def databasePropertiesFile = rootProject.file("database.properties")
+def databaseProperties = new Properties()
+databaseProperties.load(new FileInputStream(databasePropertiesFile))
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -16,6 +21,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", 'DATABASE_PASS_PHRASE', databaseProperties['DATABASE_PASS_PHRASE']
     }
 
     buildTypes {
@@ -80,6 +86,11 @@ dependencies {
     //Dagger
     implementation "com.google.dagger:dagger:2.31.2"
     kapt "com.google.dagger:dagger-compiler:2.31.2"
+
+    //Room Database
+    implementation "android.arch.persistence.room:runtime:1.1.1"
+    kapt "android.arch.persistence.room:compiler:1.1.1"
+    implementation 'net.zetetic:android-database-sqlcipher:4.4.2'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

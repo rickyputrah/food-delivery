@@ -12,7 +12,10 @@ import com.bumptech.glide.request.RequestOptions
 import com.rickyputrah.fooddelivery.R
 import com.rickyputrah.fooddelivery.databinding.FoodListItemBinding
 
-class FoodListAdapter(private val context: Context) : RecyclerView.Adapter<FoodViewHolder>() {
+class FoodListAdapter(
+    private val context: Context,
+    private val listener: FoodItemListener
+) : RecyclerView.Adapter<FoodViewHolder>() {
 
     var dataset: List<FoodListWidgetSpec.Food> = listOf()
     private val glideRequest by lazy { Glide.with(context) }
@@ -20,7 +23,7 @@ class FoodListAdapter(private val context: Context) : RecyclerView.Adapter<FoodV
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.food_list_item, parent, false)
-        return FoodViewHolder(view, glideRequest)
+        return FoodViewHolder(view, listener, glideRequest)
     }
 
     override fun getItemCount() = dataset.count()
@@ -34,6 +37,7 @@ class FoodListAdapter(private val context: Context) : RecyclerView.Adapter<FoodV
 
 class FoodViewHolder(
     itemView: View,
+    private val listener: FoodItemListener,
     private val glideRequest: RequestManager
 ) : RecyclerView.ViewHolder(itemView) {
 
@@ -46,7 +50,7 @@ class FoodViewHolder(
         binding.buttonOrder.text = "$ ${item.price}"
 
         binding.buttonOrder.setOnClickListener {
-
+            listener.onButtonAddClicked(item)
         }
 
         val requestOptions = RequestOptions()

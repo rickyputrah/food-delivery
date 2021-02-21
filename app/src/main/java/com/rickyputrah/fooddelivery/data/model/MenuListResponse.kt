@@ -12,7 +12,7 @@ data class MenuListResponse(
     )
 
     data class Menu(
-        val id: String,
+        val id: Int,
         val name: String,
         val price: Int,
         val portion: String,
@@ -26,6 +26,7 @@ data class MenuListResponse(
                 it.collectionName,
                 it.menus.map { menu ->
                     FoodListWidgetSpec.Food(
+                        id = menu.id,
                         imageUrl = menu.imageUrl,
                         name = menu.name,
                         description = menu.description,

@@ -5,6 +5,9 @@ import com.rickyputrah.fooddelivery.data.network.ApiService
 import com.rickyputrah.fooddelivery.data.repository.banner.BannerRepository
 import com.rickyputrah.fooddelivery.data.repository.banner.FakeBannerRepository
 import com.rickyputrah.fooddelivery.data.repository.banner.IBannerRepository
+import com.rickyputrah.fooddelivery.data.repository.cart.CartDao
+import com.rickyputrah.fooddelivery.data.repository.cart.CartRepository
+import com.rickyputrah.fooddelivery.data.repository.cart.ICartRepository
 import com.rickyputrah.fooddelivery.data.repository.food.FakeFoodRepository
 import com.rickyputrah.fooddelivery.data.repository.food.FoodRepository
 import com.rickyputrah.fooddelivery.data.repository.food.IFoodRepository
@@ -31,5 +34,10 @@ class RepositoryModule {
         } else {
             BannerRepository(apiService)
         }
+    }
+
+    @Provides
+    fun provideCartRepository(cartDao: CartDao): ICartRepository {
+        return CartRepository(cartDao)
     }
 }

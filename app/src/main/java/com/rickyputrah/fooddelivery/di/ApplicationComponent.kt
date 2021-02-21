@@ -1,10 +1,7 @@
 package com.rickyputrah.fooddelivery.di
 
 import com.airbnb.mvrx.MavericksViewModel
-import com.rickyputrah.fooddelivery.di.module.AppModule
-import com.rickyputrah.fooddelivery.di.module.RepositoryModule
-import com.rickyputrah.fooddelivery.di.module.ServiceModule
-import com.rickyputrah.fooddelivery.di.module.ViewModelModule
+import com.rickyputrah.fooddelivery.di.module.*
 import dagger.Component
 import javax.inject.Singleton
 
@@ -13,6 +10,7 @@ import javax.inject.Singleton
     modules = [AppModule::class,
         ViewModelModule::class,
         RepositoryModule::class,
+        DatabaseModule::class,
         ServiceModule::class]
 )
 interface ApplicationComponent {
