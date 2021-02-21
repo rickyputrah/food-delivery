@@ -1,13 +1,17 @@
 package com.rickyputrah.fooddelivery.ui.home
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import android.view.ViewTreeObserver.OnGlobalLayoutListener
 import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.airbnb.mvrx.*
 import com.google.android.material.appbar.AppBarLayout
+import com.google.android.material.badge.BadgeDrawable
+import com.google.android.material.badge.BadgeUtils
 import com.google.android.material.tabs.TabLayout
 import com.rickyputrah.fooddelivery.R
 import com.rickyputrah.fooddelivery.databinding.HomeFragmentBinding
@@ -25,10 +29,20 @@ class HomeFragment : Fragment(R.layout.home_fragment), MavericksView {
     private val binding by viewBinding(HomeFragmentBinding::bind)
     private lateinit var pagerAdapter: HomePagerAdapter
 
+    var number = 2
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupAppBar()
         setupPager()
+        setupListener()
+    }
+
+    private fun setupListener() {
+        binding.buttonCart.setOnClickListener {
+            setupBadgeView(++number)
+        }
+
     }
 
 
@@ -76,19 +90,56 @@ class HomeFragment : Fragment(R.layout.home_fragment), MavericksView {
 
     private fun setupAppBar() {
         binding.appBar.addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { appBarLayout, verticalOffset ->
-            if (abs(verticalOffset) - appBarLayout.totalScrollRange > -30) {
-                binding.tabBar.background = null
-                val params = binding.tabBar.layoutParams as LinearLayout.LayoutParams
-                params.setMargins(0, 0, 0, 0)
-            } else {
-                binding.tabBar.background = ContextCompat.getDrawable(
-                    requireContext(),
-                    R.drawable.ic_vector_content_top_radius
-                )
-                val params = binding.tabBar.layoutParams as LinearLayout.LayoutParams
-                params.setMargins(0, (-20f).getPixelValue(requireContext()), 0, 0)
-            }
+            val range = abs(verticalOffset) - appBarLayout.totalScrollRange
+            setupTabBarView(range)
+            setupButtonCartVisibility(range)
         })
         binding.collapsingToolbarLayout.setContentScrimColor(Color.TRANSPARENT)
+    }
+
+    private fun setupTabBarView(range: Int) {
+        if (range > -30) {
+            binding.tabBar.background = null
+            val params = binding.tabBar.layoutParams as LinearLayout.LayoutParams
+            params.setMargins(0, 0, 0, 0)
+        } else {
+            binding.tabBar.background = ContextCompat.getDrawable(
+                requireContext(),
+                R.drawable.ic_vector_content_top_radius
+            )
+            val params = binding.tabBar.layoutParams as LinearLayout.LayoutParams
+            params.setMargins(0, (-20f).getPixelValue(requireContext()), 0, 0)
+        }
+    }
+
+    private fun setupButtonCartVisibility(range: Int) {
+        if (range > -1000) {
+            binding.buttonCart.visibility = View.VISIBLE
+            setupBadgeView(number)
+        } else {
+            binding.buttonCart.visibility = View.GONE
+        }
+    }
+
+    private val badgeDrawable by lazy {
+        BadgeDrawable.create(requireContext()).apply {
+            horizontalOffset = 30
+            verticalOffset = 20
+        }
+    }
+
+    private fun setupBadgeView(number: Int) {
+        badgeDrawable.number = number
+        badgeDrawable.isVisible = number > 0
+        binding.buttonCart.viewTreeObserver.addOnGlobalLayoutListener(object :
+            OnGlobalLayoutListener {
+            @SuppressLint("UnsafeExperimentalUsageError")
+            override fun onGlobalLayout() {
+                badgeDrawable.number = number
+                badgeDrawable.isVisible = number > 0
+                BadgeUtils.attachBadgeDrawable(badgeDrawable, binding.buttonCart, null)
+                binding.buttonCart.viewTreeObserver.removeOnGlobalLayoutListener(this)
+            }
+        })
     }
 }

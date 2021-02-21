@@ -14,7 +14,7 @@ data class MenuListResponse(
     data class Menu(
         val id: String,
         val name: String,
-        val price: Double,
+        val price: Int,
         val portion: String,
         val imageUrl: String,
         val description: String

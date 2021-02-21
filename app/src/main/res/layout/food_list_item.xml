@@ -29,6 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_m"
             android:layout_marginEnd="@dimen/spacing_m"
+            android:layout_marginTop="@dimen/spacing_xxs"
             android:ellipsize="end"
             android:maxLines="1"
             android:textSize="@dimen/font_size_18"

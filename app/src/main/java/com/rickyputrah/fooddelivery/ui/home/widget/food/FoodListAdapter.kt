@@ -43,7 +43,7 @@ class FoodViewHolder(
         binding.textName.text = item.name
         binding.textDescription.text = item.description
         binding.textSizeInfo.text = item.portion
-        binding.buttonOrder.text = item.price.toString()
+        binding.buttonOrder.text = "$ ${item.price}"
 
         binding.buttonOrder.setOnClickListener {
 

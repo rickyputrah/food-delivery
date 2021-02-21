@@ -17,7 +17,7 @@ data class FoodListWidgetSpec(
         val name: String,
         val description: String,
         val portion: String,
-        val price: Double
+        val price: Int
     )
 }
 
